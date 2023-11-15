@@ -1,21 +1,25 @@
+body{
+    font-family: sans-serif;
+}
+
+.content{
+    max-width: 1000px;
+    display: flex;
+}
+
 #cabecalho {
-    padding-left: 100px;
-    border: solid;
+    padding-left: 150px;
     top: 0;
     left: 0;
     right: 0;
     height: 112px;
-    display: block;
+    display: flex;
+    position: absolute;
     background-color: #7848D8;
-    position: fixed;
-}
-
-#text{
-    color: red;
+    align-items: center;
 }
 
 #logodiv{
-    border: solid;
     width: 112px;
     height: 112px;
 }
@@ -25,4 +29,55 @@
     width: 112px;
     top: 0;
 
+}
+
+#divnavbar{
+    padding: 3px;
+    margin-left: 570px;
+}
+
+#navul {
+    list-style: none;
+    display: flex;
+}
+
+.navli {
+    padding-left: 20px;
+}
+
+.navli a {
+    text-decoration: none;
+    color: white;
+
+}
+
+#corpo{
+    left: 0;
+    top: 110px;
+    width: 100%;
+    height: 520px;
+
+    position: absolute;
+    background-color: #7848D8;
+    display: flex;
+}
+
+#corpoTexto{
+    left: 0;
+    width: 55%;
+    height: 520px;
+}
+
+#corpoImagem{
+    border: solid;
+    border-color: green;
+    right: 0;
+    width: 45%;
+    height: 520px;
+}
+
+#gameon{
+    width: 500px;
+    padding: 15%;
+    padding-left: 20%;
 }

@@ -1,1 +1,1 @@
-testeee
+Utilizando HTML, CSS, JavaScript e JQuery, desenvolvi uma página para exibir os produtos de uma loja fictícia, que permita que o usuário faça a compra e pagamento de algum dos produtos
