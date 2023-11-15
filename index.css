@@ -1,0 +1,28 @@
+#cabecalho {
+    padding-left: 100px;
+    border: solid;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 112px;
+    display: block;
+    background-color: #7848D8;
+    position: fixed;
+}
+
+#text{
+    color: red;
+}
+
+#logodiv{
+    border: solid;
+    width: 112px;
+    height: 112px;
+}
+
+#logo{
+    padding-top: 25px;
+    width: 112px;
+    top: 0;
+
+}
