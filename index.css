@@ -50,8 +50,7 @@ body{
     left: 0;
     top: 110px;
     width: 100%;
-    height: 440px;
-
+    height: 430px;
     position: absolute;
     background-color: #7848D8;
     display: flex;
@@ -60,25 +59,30 @@ body{
 #corpoTexto{
     left: 0;
     width: 55%;
-    height: 440px;
+    height: 426px;
+    
 }
 
 #corpoImagemdiv{
     right: 0;
     width: 45%;
-    height: 440px;
+    height: 426px;
+    
 }
 
 #corpoImagem{
     width: 300px;
     margin-left: 95px;
     margin-top: 10%;
+    padding-top: 30px;
 }
 
 #gameon{
     width: 500px;
     margin-left: 15%;
     margin-top: 10%;
+    padding-top: 25px;
+    
 }
 
 #textgameon{
@@ -105,33 +109,40 @@ body{
 #div1{
     border: solid;
     left: 0;
-    top: 550px;
+    top: 500px;
     width: 33%;
     height: 540px;
+    display: flex;
 }
 #div2{
     border: solid;
-    left: 0;
-    top: 550px;
+    top: 540px;
     width: 33%;
     height: 540px;
+    display: none;
 }
 
 #div3{
     border: solid;
-    left: 0;
-    top: 550px;
+    top: 540px;
     width: 33%;
     height: 540px;
+    display: none;
 }
 
 #dante{
     width: 300px;
     align-items: center;
+    padding-left: 30px;
 }
 
 #divtextodante{
     border: solid;
-    left: 0;
     height: 60px;
+    text-align: center;
+
+}
+
+#jackpot{
+    display: contents;
 }
