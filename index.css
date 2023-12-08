@@ -108,6 +108,7 @@ body{
 }
 
 #div1{
+    margin-left: 5%;
     left: 0;
     width: 33%;
     height: 540px;
@@ -120,6 +121,7 @@ body{
 }
 
 #div3{
+    margin-right: 6%;
     top: 540px;
     width: 33%;
     height: 540px;
@@ -168,7 +170,6 @@ body{
 }
 
 #produtos-div{
-    border: solid;
     border-color: red;
     left: 0;
     top: 1200px;
@@ -182,7 +183,6 @@ body{
 
 #texto-produtos-div{
     top: 1120px;
-    border: solid;
     left: 42%;
     position: absolute;
     background-color: white;
@@ -192,8 +192,6 @@ body{
     position: absolute;
     margin-top: 40px;
     left: 15%;
-    border: solid;
-    border-color: green;
     width: 20%;
     height: 330px;
     align-items: center;
@@ -204,8 +202,6 @@ body{
     position: absolute;
     margin-top: 40px;
     left: 40%;
-    border: solid;
-    border-color: green;
     width: 20%;
     height: 330px;
     align-items: center;
@@ -216,8 +212,6 @@ body{
     position: absolute;
     margin-top: 40px;
     left: 65%;
-    border: solid;
-    border-color: green;
     width: 20%;
     height: 330px;
     align-items: center;
@@ -229,11 +223,10 @@ body{
 }
 
 #menu-compra{
-    border: solid; height: 520px;
+    height: 520px;
 }
 
 #menu-compra-2{
-    border: solid; 
     margin-top: 10%; 
     margin-left: 23%;
     width: 600px; 
@@ -245,4 +238,14 @@ body{
     width: 300px;
     margin-left: 36%;
     margin-top: 12%;
+}
+
+#cartao-div{
+    text-align: center;
+    padding-top: 12%;
+}
+
+#dados-pix{
+    text-align: center;
+    padding-top: 12%;
 }

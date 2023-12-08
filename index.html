@@ -27,6 +27,9 @@
             <div id="corpoTexto">
                 <img id="gameon" src="images/game on.PNG">
                 <p id="textgameon"> Olá jogador, temos os melhores consoles te esperando aqui. E aí? Pronto pro game on?</p>
+                <br>
+                <br>
+                <br>
                 <input class="botao" type="button" value="Para começar">
                 <input type="button" value="Produtos">
             </div>
@@ -65,19 +68,19 @@
             <div id="produto1">
                 <img class="produto-imagem" src="https://images.kabum.com.br/produtos/fotos/sync_mirakl/367480/Computador-Desktop-Intel-Core-I5-8Gb-SSD-120Gb-Linux-Monitor-19-Teclado-E-Mouse-Aez_1663100928_g.jpg">
                 <p>Computador de última geração</p>
-                <p>R$ 5000,00</p>
+                <p>R$ 7999,99</p>
                 <input type="button" value="COMPRAR" class="botao-compra">
             </div>
             <div id="produto2">
                 <img class="produto-imagem" src="https://images.kabum.com.br/produtos/fotos/sync_mirakl/367480/Computador-Desktop-Intel-Core-I5-8Gb-SSD-120Gb-Linux-Monitor-19-Teclado-E-Mouse-Aez_1663100928_g.jpg">
                 <p>Computador de última geração</p>
-                <p>R$ 5000,00</p>
+                <p>R$ 4999,99</p>
                 <input type="button" value="COMPRAR" class="botao-compra">
             </div>
             <div id="produto3">
                 <img class="produto-imagem" src="https://images.kabum.com.br/produtos/fotos/sync_mirakl/367480/Computador-Desktop-Intel-Core-I5-8Gb-SSD-120Gb-Linux-Monitor-19-Teclado-E-Mouse-Aez_1663100928_g.jpg">
                 <p>Computador de última geração</p>
-                <p>R$ 5000,00</p>
+                <p>R$ 5599,99</p>
                 <input type="button" value="COMPRAR" class="botao-compra">
             </div>
         </div>
@@ -93,12 +96,33 @@
             <br>
             <input id="pix" type="button" value="PIX" > <input id="cartao" type="button" value="Cartão de crédito">
         </div>
+        <div id="dados-pix">
+            <p>Nome do Titular: <input class="nome" type="text"></p>
+            <p>CPF: <input id="cpf" type="text"></p>
+            <input id="botao-finalizar-compra-pix" type="button" value="Finalizar compra">
+        </div>
         <div id="qrcode-div">
             <img id="qrcode" src="https://img.olhardigital.com.br/wp-content/uploads/2019/06/20190628211430.jpg" alt="">
             <p style="text-align: center;">Código pix: laksjhfaliuhefishelaksjhflaksmnlkjnsve</p>
         </div>
         <div id="cartao-div">
-            <p>teste</p>
+            <p>Nome do Titular: <input id="nome2" type="text"></p>
+            <p>Número do cartão: <input id="numcartao" type="text"></p>
+            <p>Código de segurança: <input id="codcartao"type="text"></p>
+            <p>Validade do cartão: <input id="validadecartao" type="date"></p>
+            <p>Quantidade de parcelas: <select name="parcelas" id="parcelas">
+                <option value="10X">12X</option>
+                <option value="8X">8X</option>
+                <option value="5X">5X</option>
+                <option value="2X">2X</option>
+                <option value="1X">1X</option>
+            </select>
+            </p>
+            <input id="botao-finalizar-compra" type="button" value="Finalizar compra">
+        </div>
+        <div id="compra-finalizada">
+            <p style="text-align: center; margin-top: 150px;"> Sua compra foi efetuada com sucesso!</p>
+            <img style="width: 100px; padding-left: 43%;" src="https://www.conjur.com.br/img/b/emoji-joinha.jpeg" alt="joinha">
         </div>
         
     </div>
@@ -108,6 +132,9 @@
         $(document).ready(function() {
             $('#qrcode-div').hide()
             $('#cartao-div').hide()
+            $('#dados-pix').hide()
+            $('#compra-finalizada').hide()
+            
 
             $('.botao-compra').click(function(){
                 if($('.botao-compra').is(':visible')){
@@ -117,13 +144,119 @@
             $('#pix').click(function(){
                 if($('#menu-compra-2').is(':visible')){
                     $('#menu-compra-2').hide();
-                    $('#qrcode-div').show()
+                    $('#dados-pix').show()
                 }
             });
             $('#cartao').click(function(){
                 if($('#menu-compra-2').is(':visible')){
                     $('#menu-compra-2').hide();
                     $('#cartao-div').show()
+                }
+            });
+
+            $('.nome').change(function(){
+                var nome = $(".nome").val();
+                if (!/^[a-zA-Z]+$/.test(nome)) {
+                    alert("Nome só admite letras.");
+                    console.log(nome)
+                    $(".nome").val('')
+                }
+            });
+
+            $('#cpf').keyup(function(){
+                var cpf = $("#cpf").val();
+                if (cpf.length == 3) {
+                    $('#cpf').val(cpf + '.')
+                }
+                if (cpf.length == 7) {
+                    $('#cpf').val(cpf + '.')
+                }
+                if (cpf.length == 11) {
+                    $('#cpf').val(cpf + '-')
+                }
+            });
+
+            $('#botao-finalizar-compra-pix').click(function(){
+                var cpf = $("#cpf").val();
+                cpf = cpf.replace('.','')
+                cpf = cpf.replace('.','')
+                cpf = cpf.replace('-','')
+                console.log(cpf)
+                if (!/^\d+$/.test(cpf)) {
+                    alert("apenas números para o cpf.");
+                    $('#cpf').val('')
+                }
+                if (cpf.length != 11){
+                    alert("Cpf inválido");
+                }else{
+                    if($('#botao-finalizar-compra-pix').is(':visible')){
+                    $('#dados-pix').hide();
+                    $('#qrcode-div').show()
+                }
+                }
+            });
+
+            $('#nome').change(function(){
+                var nome2 = $("#nome").val();
+                if (!/^[a-zA-Z]+$/.test(nome2)) {
+                    alert("Nome só admite letras.");
+                    console.log(nome2)
+                    $("#nome").val('')
+                }
+            });
+
+
+            $('#numcartao').change(function(){
+                var numcartao = $('#numcartao').val();
+                if (!/^\d+$/.test(numcartao)) {
+                    alert("apenas números para o numero do cartão.");
+                    $('#numcartao').val('');
+                }
+                if (numcartao.length != 16){
+                    alert("Cartão inválido");
+                    $('#numcartao').val('');
+                }
+            });
+
+            $('#codcartao').change(function(){
+                var codcartao = $('#codcartao').val();
+                if (!/^\d+$/.test(codcartao)) {
+                    alert("apenas números para o numero do cartão.");
+                    $('#codcartao').val('');
+                }
+                if (codcartao.length != 3){
+                    alert("Código inválido");
+                    $('#codcartao').val('');
+                }
+            });
+
+
+            $('#botao-finalizar-compra').click(function(){
+                var numcartao = $('#numcartao').val();
+                if (!/^\d+$/.test(numcartao)) {
+                    alert("apenas números para o numero do cartão.");
+                    $('#numcartao').val('');
+                }else{
+                    if (numcartao.length != 16){
+                        alert("Cartão inválido");
+                        $('#numcartao').val('');
+                    }else{
+                        var codcartao = $('#codcartao').val();
+                        if (!/^\d+$/.test(codcartao)) {
+                            alert("apenas números para o numero do cartão.");
+                            $('#codcartao').val('');
+                        }else{
+                            if (codcartao.length != 3){
+                                alert("Código inválido");
+                                $('#codcartao').val('');
+                            }else{
+                                if($('#botao-finalizar-compra').is(':visible')){
+                                    $('#cartao-div').hide();
+                                    $('#compra-finalizada').show()
+                                }
+                            }
+                        }
+                    }
                 }
             });
         });

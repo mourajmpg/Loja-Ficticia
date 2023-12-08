@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aula jQuery</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form id="myForm">
+        <label>Nome:</label>
+        <input type="text" id="nome"/>
+        <label>Data:</label>
+        <input type="date" id="data"/>
+        <label>Idade:</label>
+        <input type="text" id="idade"/>
+        <input type="submit" value="Enviar"/>
+    </form>
+    
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myForm").submit(function(e) {
+ 
+                var nome = $("#nome").val();
+                if (!/^[a-zA-Z]+$/.test(nome)) {
+                    alert("preencha o campo Nome corretamente.");
+                    e.preventDefault();
+                    return;
+                }
+
+
+                var data = $("#data").val();
+                if (data === "") {
+                    alert("selecione uma data.");
+                    e.preventDefault();
+                    return;
+                }
+
+                // apenas números
+                /*
+                Expressão regular /^\d+$/
+
+                /: início e o fim da expressão regular.
+                ^: início da string.
+                \d: qualquer dígito de 0 a 9.
+                +: um ou mais dígitos.
+                $: final da string.
+                
+                */
+                var idade = $("#idade").val();
+                console.log("Idade:", idade);
+                if (!/^\d+$/.test(idade)) {
+                    alert("apenas números para a idade.");
+                    e.preventDefault();
+                    return;
+                }
+            });
+        });
+    </script>    
+  </body>
+</html>
