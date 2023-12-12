@@ -7,35 +7,18 @@
     <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
-    <div id="cartao-div">
-        <table style="padding: 10px;">
+    <div id="dados-pix">
+        <table>
             <tr>
-                <td><p>Nome do Titular: <input id="nome2" type="text"></p></td>
-                <td><p id="erronome" style="font-size: x-small; color: red;"></p></td>
+                <td><p>Nome do Titular: <input class="nome" type="text"></p></td>
             </tr>
             <tr>
-                <td><p>Número do cartão: <input id="numcartao" type="text" size="18"></p></td>
-                <td><img id="bandeira-cartao" src="" alt=""></td>
-                <td><p id="erronum" style="font-size: x-small; color: red;"></p></td>
+                <td> <p>CPF: <input id="cpf" type="text"></p> </td>
             </tr>
             <tr>
-                <td><p>CVV: <input id="codcartao"type="text" size="3"></p> <p id="errocod" style="font-size: x-small; color: red;"></p></td>
-                <td><p id="errocod" style="font-size: x-small; color: red;"></p></td>
+                <td><input id="botao-finalizar-compra-pix" type="button" value="Finalizar compra"></td>
             </tr>
-            <tr>
-                <td><p>Validade: <input id="validadecartao" type="date"></p></td>
-            </tr>
-            <tr>
-                <td><p>Parcelas: <select name="parcelas" id="parcelas">
-                    <option value="10X">12X</option>
-                    <option value="8X">8X</option>
-                    <option value="5X">5X</option>
-                    <option value="2X">2X</option>
-                    <option value="1X">1X</option>
-                </select>
-                </p></td>
-                <td><input id="botao-finalizar-compra" type="button" value="Finalizar compra"></td>
-            </tr>
+            
         </table>
     </div>
 </body>

@@ -66,21 +66,21 @@
         <div id="produtos-div">
             
             <div class="produto" data-produto="1">
-                <img class="produto-imagem" src="images/pc.jpg">
+                <img class="produto-imagem" src="images/produto 1.jpg">
                 <p>Computador de última geração</p>
                 <p>R$ 7999,99</p>
                 <input type="button" value="COMPRAR" class="botao-compra">
             </div>
             
             <div class="produto" data-produto="2">
-                <img class="produto-imagem" src="images/pc.jpg">
+                <img class="produto-imagem" src="images/produto 2.jpg">
                 <p>Computador de última geração</p>
                 <p>R$ 4999,99</p>
                 <input type="button" value="COMPRAR" class="botao-compra">
             </div>
             
             <div class="produto" data-produto="3">
-                <img class="produto-imagem" src="images/pc.jpg">
+                <img class="produto-imagem" src="images/produto 3.jpg">
                 <p>Computador de última geração</p>
                 <p>R$ 5599,99</p>
                 <input type="button" value="COMPRAR" class="botao-compra">
@@ -226,14 +226,15 @@
                 if (!/^\d+$/.test(cpf)) {
                     alert("apenas números para o cpf.");
                     $('#cpf').val('')
-                }
-                if (cpf.length != 11){
-                    alert("Cpf inválido");
                 }else{
-                    if($('#botao-finalizar-compra-pix').is(':visible')){
-                    $('#dados-pix').hide();
-                    $('#qrcode-div').show()
-                }
+                    if (cpf.length != 11){
+                        alert("Cpf inválido");
+                    }else{
+                        if($('#botao-finalizar-compra-pix').is(':visible')){
+                        $('#dados-pix').hide();
+                        $('#qrcode-div').show()
+                        }
+                    }
                 }
             });
 
@@ -278,11 +279,20 @@
                 var produto = $(this).closest('.produto');
                 var numeroProduto = produto.data('produto');
                 console.log(numeroProduto);
+                if (numeroProduto == 1){
+                    $('#5').text('5x com juros R$ 1.746,83');
+                    $('#8').text('8x com juros R$ 1.139,65');
+                    $('#10').text('10x com juros R$ 937,84');
+                }
                 if (numeroProduto == 2){
-                    $('#10').text('10x com juros R$');
-                    $('#8').text('8x com juros R$ 619,99');
-                    $('#5').text('5x com juros R$ 1.149,99');
-                    
+                    $('#5').text('5x com juros R$ 1.091,77');
+                    $('#8').text('8x com juros R$ 712,28');
+                    $('#10').text('10x com juros R$ 586,15');
+                }
+                if (numeroProduto == 3){
+                    $('#5').text('5x com juros R$ 1.222,78');
+                    $('#8').text('8x com juros R$ 797,75');
+                    $('#10').text('10x com juros R$ 656,49');
                 }
             });
 
